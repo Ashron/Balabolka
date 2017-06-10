@@ -17,7 +17,6 @@ class ShareHelper:
         start = str_symbols.find(info_share)+len(info_share)+3
         end = str_symbols.find('": "', start)
          
+#        code_share = str(str_symbols[start:end])
         code_share = str_symbols[start:end]
         return [code_share]
-        
-        
