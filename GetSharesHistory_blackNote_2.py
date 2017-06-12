@@ -2,23 +2,26 @@ from pandas import read_csv  # Чтобы упаковать результат 
 from datetime import datetime
 from sharehelper import ShareHelper
 
+#transneft-pref  :  1012
+#transneft-pref  :  152697
 #IN:
-ticker = 'MTLRP'
-start_date_str = "01.01.2016"
+ticker = 'transneft-pref'
+start_date_str = "01.01.2000"
 end_date_str = "31.12.2017"
 timeframe = 9
 
 
 #--========================================
 sh = ShareHelper()  
-tickercode = sh.get_code(ticker)[0]
+#tickercode = sh.get_code(ticker)[0]
+tickercode = 1012
 market=1
 filetype = 'txt'
 
 start_date = datetime.strptime(start_date_str, "%d.%m.%Y").date()
 end_date = datetime.strptime(end_date_str, "%d.%m.%Y").date()
 
-filename = ('MTLRP_'+str(start_date.year)+str(start_date.month)+str(start_date.day)
+filename = (ticker+'_'+str(start_date.year)+str(start_date.month)+str(start_date.day)
                 +'_'+str(end_date.year)+str(end_date.month)+str(end_date.day))
 
 url = ('http://export.finam.ru/'
